@@ -31,7 +31,6 @@ jobs:
           MYSQL_ROOT_PASSWORD: mysql
         ports:
           - 3306:3306
-        if: matrix.db == 'mysql'
 
       postgres:
         image: postgres:15.3
@@ -41,7 +40,6 @@ jobs:
           POSTGRES_PASSWORD: postgres
         ports:
           - 5432:5432
-        if: matrix.db == 'postgresql'
 
     steps:
     - name: Checkout repository
