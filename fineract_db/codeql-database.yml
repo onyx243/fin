@@ -1,0 +1,39 @@
+---
+sourceLocationPrefix: D:\fineract-develop
+baselineLinesOfCode: 357713
+unicodeNewlines: false
+columnKind: utf16
+primaryLanguage: java
+inProgress:
+  primaryLanguage: java
+  installedExtractors:
+    cpp:
+     - D:/codeql/cpp
+    csharp:
+     - D:/codeql/csharp
+    csv:
+     - D:/codeql/csv
+    go:
+     - D:/codeql/go
+    html:
+     - D:/codeql/html
+    java:
+     - D:/codeql/java
+    javascript:
+     - D:/codeql/javascript
+    properties:
+     - D:/codeql/properties
+    python:
+     - D:/codeql/python
+    ruby:
+     - D:/codeql/ruby
+    swift:
+     - D:/codeql/swift
+    xml:
+     - D:/codeql/xml
+    yaml:
+     - D:/codeql/yaml
+creationMetadata:
+  cliVersion: 2.13.3
+  creationTime: 2023-06-13T10:05:53.897269700Z
+finalised: false

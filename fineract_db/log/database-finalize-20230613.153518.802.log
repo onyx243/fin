@@ -1,0 +1,145 @@
+[2023-06-13 15:35:18] This is codeql database finalize fineract_db
+[2023-06-13 15:35:18] Log file was started late.
+[2023-06-13 15:35:18] Calling plumbing command: codeql resolve languages --format=json
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from D:\codeql\.codeqlmanifest.json
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\cpp\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\csharp\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\csv\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\go\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\html\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\java\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\javascript\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\properties\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\python\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\ruby\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\swift\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\xml\codeql-extractor.yml.
+[2023-06-13 15:35:19] [DETAILS] resolve languages> Parsing D:\codeql\yaml\codeql-extractor.yml.
+[2023-06-13 15:35:19] Plumbing command codeql resolve languages completed:
+                      {
+                        "extractors" : {
+                          "cpp" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\cpp"
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "cil" : {
+                                  "title" : "Whether to enable CIL extraction.",
+                                  "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\csv"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\go"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\html"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\javascript",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\properties"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\python"
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\swift"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\xml"
+                            }
+                          ],
+                          "yaml" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\yaml"
+                            }
+                          ]
+                        }
+                      }
+[2023-06-13 15:35:19] [SPAMMIER] database finalize> Loaded the following extractors: C/C++, Python, CSV, Go, JavaScript, Ruby, C#, Java, XML, HTML, Java Properties Files, Swift, YAML
+[2023-06-13 15:35:19] [ERROR] database finalize> CodeQL detected code written in Java but could not process any of it. This can occur if the specified build commands failed to compile or process any code.
+                               - Confirm that there is some source code for the specified language in the project.
+                               - For codebases written in Go, JavaScript, TypeScript, and Python, do not specify 
+                                 an explicit --command.
+                               - For other languages, the --command must specify a "clean" build which compiles 
+                                 all the source code files without reusing existing build artefacts.
+[2023-06-13 15:35:19] Exiting with code 32

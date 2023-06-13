@@ -1,0 +1,571 @@
+[2023-06-13 15:08:22] This is codeql database create fineract_db --language=java
+[2023-06-13 15:08:22] Log file was started late.
+[2023-06-13 15:08:22] [PROGRESS] database create> Initializing database at D:\fineract-develop\fineract_db.
+[2023-06-13 15:08:22] Running plumbing command: codeql database init --language=java --qlconfig-file=D:\fineract-develop\qlconfig.yml --source-root=D:\fineract-develop --allow-missing-source-root=false --allow-already-existing -- D:\fineract-develop\fineract_db
+[2023-06-13 15:08:22] Calling plumbing command: codeql resolve languages --format=json
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from D:\codeql\.codeqlmanifest.json
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\cpp\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\csharp\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\csv\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\go\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\html\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\java\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\javascript\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\properties\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\python\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\ruby\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\swift\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\xml\codeql-extractor.yml.
+[2023-06-13 15:08:23] [DETAILS] resolve languages> Parsing D:\codeql\yaml\codeql-extractor.yml.
+[2023-06-13 15:08:23] Plumbing command codeql resolve languages completed:
+                      {
+                        "extractors" : {
+                          "cpp" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\cpp"
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "cil" : {
+                                  "title" : "Whether to enable CIL extraction.",
+                                  "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\csv"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\go"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\html"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\javascript",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\properties"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\python"
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\swift"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\xml"
+                            }
+                          ],
+                          "yaml" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\yaml"
+                            }
+                          ]
+                        }
+                      }
+[2023-06-13 15:08:23] [PROGRESS] database init> Calculating baseline information in D:\fineract-develop
+[2023-06-13 15:08:24] [SPAMMY] database init> Ignoring the following directories when processing baseline information: .git, .hg, .svn.
+[2023-06-13 15:08:24] [DETAILS] database init> Running command in D:\fineract-develop: D:\codeql\tools\win64\scc.exe --by-file --exclude-dir .git,.hg,.svn --format json --no-large --no-min .
+[2023-06-13 15:16:28] [SPAMMY] database init> Found 4274 baseline files for java.
+[2023-06-13 15:16:28] [SPAMMY] database init> Found 18 baseline files for yaml.
+[2023-06-13 15:16:28] [PROGRESS] database init> Calculated baseline information for languages: java, yaml (8m4s).
+[2023-06-13 15:16:28] [PROGRESS] database init> Resolving extractor java.
+[2023-06-13 15:16:28] [DETAILS] database init> Found candidate extractor root for java: D:\codeql\java.
+[2023-06-13 15:16:28] [PROGRESS] database init> Successfully loaded extractor Java (java) from D:\codeql\java.
+[2023-06-13 15:16:28] [PROGRESS] database init> Created skeleton CodeQL database at D:\fineract-develop\fineract_db. This in-progress database is ready to be populated by an extractor.
+[2023-06-13 15:16:28] Plumbing command codeql database init completed.
+[2023-06-13 15:16:28] Using autobuild script D:\codeql\java\tools\autobuild.cmd.
+[2023-06-13 15:16:28] [DETAILS] database create> Detected autobuild command for Java: D:\codeql\java\tools\autobuild.cmd.
+[2023-06-13 15:16:28] [PROGRESS] database create> Running build command: [D:\codeql\java\tools\autobuild.cmd]
+[2023-06-13 15:16:28] Running plumbing command: codeql database trace-command --working-dir=D:\fineract-develop --index-traceless-dbs --no-db-cluster -- D:\fineract-develop\fineract_db D:\codeql\java\tools\autobuild.cmd
+[2023-06-13 15:16:29] [PROGRESS] database trace-command> Running command in D:\fineract-develop: [D:\codeql\java\tools\autobuild.cmd]
+[2023-06-13 15:16:31] [build-stdout] [2023-06-13 15:16:31] Build directory is D:\fineract-develop\.
+[2023-06-13 15:16:31] [build-stdout] [2023-06-13 15:16:31] [autobuild] > gradlew.bat --no-daemon -S -Dorg.gradle.dependency.verification=off --init-script "C:\\Users\\yashs\\AppData\\Local\\Temp\\semmleTempDir\\init.gradle" clean
+[2023-06-13 15:17:22] [build-stdout] [2023-06-13 15:17:22] [autobuild] Could not open the public key ring.
+[2023-06-13 15:17:22] [build-stdout] [2023-06-13 15:17:22] [autobuild] null
+[2023-06-13 15:17:27] [build-stdout] [2023-06-13 15:17:27] [autobuild] Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+[2023-06-13 15:17:27] [build-stdout] [2023-06-13 15:17:27] [autobuild] You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+[2023-06-13 15:17:27] [build-stdout] [2023-06-13 15:17:27] [autobuild] See https://docs.gradle.org/7.5.1/userguide/command_line_interface.html#sec:command_line_warnings
+[2023-06-13 15:17:27] [build-stdout] [2023-06-13 15:17:27] [autobuild] > gradlew.bat --no-daemon -S -Dorg.gradle.dependency.verification=off --init-script "C:\\Users\\yashs\\AppData\\Local\\Temp\\semmleTempDir\\init.gradle" testClasses
+[2023-06-13 15:17:46] [build-stdout] [2023-06-13 15:17:46] [autobuild] Could not open the public key ring.
+[2023-06-13 15:17:47] [build-stdout] [2023-06-13 15:17:47] [autobuild] null
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] FAILURE: Build failed with an exception.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] * What went wrong:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] Could not determine the dependencies of task ':fineract-war:compileTestJava'.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] > Could not resolve all task dependencies for configuration ':fineract-war:testCompileClasspath'.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]    > Could not resolve project :fineract-core.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]      Required by:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]          project :fineract-war
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       > No matching variant of project :fineract-core was found. The consumer was configured to find an API of a library compatible with Java 13, preferably in the form of class files, preferably optimized for standard JVMs, and its dependencies declared externally but:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'apiElements' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY declares an API of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'coverageDataElementsForTest' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'mainSourceElements' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY declares a component, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'runtimeElements' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY declares a runtime of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'testResultsElementsForTest' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]    > Could not resolve project :fineract-investor.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]      Required by:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]          project :fineract-war
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       > No matching variant of project :fineract-investor was found. The consumer was configured to find an API of a library compatible with Java 13, preferably in the form of class files, preferably optimized for standard JVMs, and its dependencies declared externally but:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'apiElements' capability org.apache.fineract:fineract-investor:0.0.0-NOT_A_GIT_REPOSITORY declares an API of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'coverageDataElementsForTest' capability org.apache.fineract:fineract-investor:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'mainSourceElements' capability org.apache.fineract:fineract-investor:0.0.0-NOT_A_GIT_REPOSITORY declares a component, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'runtimeElements' capability org.apache.fineract:fineract-investor:0.0.0-NOT_A_GIT_REPOSITORY declares a runtime of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'testResultsElementsForTest' capability org.apache.fineract:fineract-investor:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]    > Could not resolve project :fineract-loan.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]      Required by:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]          project :fineract-war
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       > No matching variant of project :fineract-loan was found. The consumer was configured to find an API of a library compatible with Java 13, preferably in the form of class files, preferably optimized for standard JVMs, and its dependencies declared externally but:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'apiElements' capability org.apache.fineract:fineract-loan:0.0.0-NOT_A_GIT_REPOSITORY declares an API of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'coverageDataElementsForTest' capability org.apache.fineract:fineract-loan:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'mainSourceElements' capability org.apache.fineract:fineract-loan:0.0.0-NOT_A_GIT_REPOSITORY declares a component, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'runtimeElements' capability org.apache.fineract:fineract-loan:0.0.0-NOT_A_GIT_REPOSITORY declares a runtime of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'testResultsElementsForTest' capability org.apache.fineract:fineract-loan:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]    > Could not resolve project :fineract-provider.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]      Required by:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]          project :fineract-war
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       > No matching variant of project :fineract-provider was found. The consumer was configured to find an API of a library compatible with Java 13, preferably in the form of class files, preferably optimized for standard JVMs, and its dependencies declared externally but:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'apiElements' capability org.apache.fineract:fineract-provider:0.0.0-NOT_A_GIT_REPOSITORY declares an API of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'coverageDataElementsForTest' capability org.apache.fineract:fineract-provider:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'mainSourceElements' capability org.apache.fineract:fineract-provider:0.0.0-NOT_A_GIT_REPOSITORY declares a component, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'runtimeElements' capability org.apache.fineract:fineract-provider:0.0.0-NOT_A_GIT_REPOSITORY declares a runtime of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Variant 'testResultsElementsForTest' capability org.apache.fineract:fineract-provider:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]               - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]                   - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] * Try:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] > Run with --info or --debug option to get more log output.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] > Run with --scan to get full insights.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] * Exception is:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] org.gradle.api.internal.tasks.TaskDependencyResolveException: Could not determine the dependencies of task ':fineract-war:compileTestJava'.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.tasks.CachingTaskDependencyResolveContext.getDependencies(CachingTaskDependencyResolveContext.java:68)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.TaskDependencyResolver.resolveDependenciesFor(TaskDependencyResolver.java:49)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.LocalTaskNode.getDependencies(LocalTaskNode.java:147)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.LocalTaskNode.resolveDependencies(LocalTaskNode.java:121)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.DefaultExecutionPlan.doAddNodes(DefaultExecutionPlan.java:209)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.DefaultExecutionPlan.addEntryTasks(DefaultExecutionPlan.java:174)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.DefaultExecutionPlan.addEntryTasks(DefaultExecutionPlan.java:158)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.TaskNameResolvingBuildConfigurationAction.configure(TaskNameResolvingBuildConfigurationAction.java:47)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.configure(DefaultBuildConfigurationActionExecuter.java:49)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.access$000(DefaultBuildConfigurationActionExecuter.java:25)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter$1.proceed(DefaultBuildConfigurationActionExecuter.java:62)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultTasksBuildExecutionAction.configure(DefaultTasksBuildExecutionAction.java:48)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.configure(DefaultBuildConfigurationActionExecuter.java:49)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.lambda$select$0(DefaultBuildConfigurationActionExecuter.java:36)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.Factories$1.create(Factories.java:31)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerLeaseService.java:345)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.project.DefaultProjectStateRegistry$DefaultBuildProjectRegistry.withMutableStateOfAllProjects(DefaultProjectStateRegistry.java:197)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.project.DefaultProjectStateRegistry$DefaultBuildProjectRegistry.withMutableStateOfAllProjects(DefaultProjectStateRegistry.java:190)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.select(DefaultBuildConfigurationActionExecuter.java:35)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.initialization.DefaultTaskExecutionPreparer.prepareForTaskExecution(DefaultTaskExecutionPreparer.java:42)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.initialization.VintageBuildModelController.lambda$scheduleRequestedTasks$1(VintageBuildModelController.java:81)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.lambda$inState$1(StateTransitionController.java:110)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.lambda$inState$2(StateTransitionController.java:125)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.inState(StateTransitionController.java:121)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.inState(StateTransitionController.java:109)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.initialization.VintageBuildModelController.scheduleRequestedTasks(VintageBuildModelController.java:81)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.DefaultBuildLifecycleController$DefaultWorkGraphBuilder.addRequestedTasks(DefaultBuildLifecycleController.java:242)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$populateWorkGraph$4(DefaultBuildLifecycleController.java:143)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.DefaultBuildWorkPreparer.populateWorkGraph(DefaultBuildWorkPreparer.java:41)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.BuildOperationFiringBuildWorkPreparer$PopulateWorkGraph.populateTaskGraph(BuildOperationFiringBuildWorkPreparer.java:138)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.BuildOperationFiringBuildWorkPreparer$PopulateWorkGraph.run(BuildOperationFiringBuildWorkPreparer.java:89)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.BuildOperationFiringBuildWorkPreparer.populateWorkGraph(BuildOperationFiringBuildWorkPreparer.java:66)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$populateWorkGraph$5(DefaultBuildLifecycleController.java:143)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.lambda$inState$1(StateTransitionController.java:110)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.lambda$inState$2(StateTransitionController.java:125)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.inState(StateTransitionController.java:121)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.inState(StateTransitionController.java:109)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.DefaultBuildLifecycleController.populateWorkGraph(DefaultBuildLifecycleController.java:143)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.populateWorkGraph(DefaultBuildWorkGraphController.java:126)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.composite.internal.DefaultBuildController.populateWorkGraph(DefaultBuildController.java:71)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph$DefaultBuildTreeWorkGraphBuilder.withWorkGraph(DefaultIncludedBuildTaskGraph.java:142)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.lambda$scheduleRequestedTasks$0(DefaultBuildTreeWorkPreparer.java:34)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph$DefaultBuildTreeWorkGraph$1.run(DefaultIncludedBuildTaskGraph.java:170)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph$DefaultBuildTreeWorkGraph.scheduleWork(DefaultIncludedBuildTaskGraph.java:167)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.scheduleRequestedTasks(DefaultBuildTreeWorkPreparer.java:34)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$doScheduleAndRunTasks$2(DefaultBuildTreeLifecycleController.java:89)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph.withNewWorkGraph(DefaultIncludedBuildTaskGraph.java:101)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.doScheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:88)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$runBuild$4(DefaultBuildTreeLifecycleController.java:106)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.lambda$transition$5(StateTransitionController.java:166)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:247)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.lambda$transition$6(StateTransitionController.java:166)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.transition(StateTransitionController.java:166)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.runBuild(DefaultBuildTreeLifecycleController.java:103)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:69)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:31)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.ProblemReportingBuildActionRunner.run(ProblemReportingBuildActionRunner.java:49)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeReportingBuildActionRunner.java:65)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSystemWatchingBuildActionRunner.java:136)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildCompletionNotifyingBuildActionRunner.java:41)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.lambda$execute$0(RootBuildLifecycleBuildActionExecutor.java:40)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:122)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.execute(RootBuildLifecycleBuildActionExecutor.java:40)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.DefaultBuildTreeContext.execute(DefaultBuildTreeContext.java:40)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.lambda$execute$0(BuildTreeLifecycleBuildActionExecutor.java:65)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:53)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.execute(BuildTreeLifecycleBuildActionExecutor.java:65)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:61)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:57)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor.execute(RunAsBuildOperationBuildActionExecutor.java:57)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.lambda$execute$0(RunAsWorkerThreadBuildActionExecutor.java:36)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.execute(RunAsWorkerThreadBuildActionExecutor.java:36)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.continuous.ContinuousBuildActionExecutor.execute(ContinuousBuildActionExecutor.java:110)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.SubscribableBuildActionExecutor.execute(SubscribableBuildActionExecutor.java:64)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.session.DefaultBuildSessionContext.execute(DefaultBuildSessionContext.java:46)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:100)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:88)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:69)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:62)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:41)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:63)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:31)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:52)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:40)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:47)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:31)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:65)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:39)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:29)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:35)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:78)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:75)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.util.internal.Swapper.swap(Swapper.java:38)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:75)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:50)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:297)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at java.base/java.lang.Thread.run(Thread.java:830)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] Caused by: org.gradle.api.internal.artifacts.ivyservice.DefaultLenientConfiguration$ArtifactResolveException: Could not resolve all task dependencies for configuration ':fineract-war:testCompileClasspath'.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.rethrowFailure(DefaultConfiguration.java:1524)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.access$3700(DefaultConfiguration.java:159)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$DefaultResolutionHost.rethrowFailure(DefaultConfiguration.java:2174)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.visitDependencies(DefaultConfiguration.java:1482)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.tasks.CachingTaskDependencyResolveContext$TaskGraphImpl.getNodeValues(CachingTaskDependencyResolveContext.java:103)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.graph.CachingDirectedGraphWalker$GraphWithEmptyEdges.getNodeValues(CachingDirectedGraphWalker.java:213)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.graph.CachingDirectedGraphWalker.doSearch(CachingDirectedGraphWalker.java:121)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.graph.CachingDirectedGraphWalker.findValues(CachingDirectedGraphWalker.java:73)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.tasks.CachingTaskDependencyResolveContext.getDependencies(CachingTaskDependencyResolveContext.java:66)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	... 144 more
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] Caused by: org.gradle.internal.resolve.ModuleVersionResolveException: Could not resolve project :fineract-core.
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] Required by:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]     project :fineract-war
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] Caused by: org.gradle.internal.component.NoMatchingConfigurationSelectionException: No matching variant of project :fineract-core was found. The consumer was configured to find an API of a library compatible with Java 13, preferably in the form of class files, preferably optimized for standard JVMs, and its dependencies declared externally but:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]   - Variant 'apiElements' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY declares an API of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]   - Variant 'coverageDataElementsForTest' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]   - Variant 'mainSourceElements' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY declares a component, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]   - Variant 'runtimeElements' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY declares a runtime of a library, packaged as a jar, and its dependencies declared externally:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Incompatible because this component declares a component compatible with Java 17 and the consumer needed a component compatible with Java 13
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Other compatible attribute:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]   - Variant 'testResultsElementsForTest' capability org.apache.fineract:fineract-core:0.0.0-NOT_A_GIT_REPOSITORY:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Incompatible because this component declares a component of category 'verification' and the consumer needed a library
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]       - Other compatible attributes:
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its target Java environment (preferred optimized for standard JVMs)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its target Java version (required compatibility with Java 13)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its elements (required them preferably in the form of class files)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild]           - Doesn't say anything about its usage (required an API)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.component.model.AttributeConfigurationSelector.selectConfigurationUsingAttributeMatching(AttributeConfigurationSelector.java:112)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.component.model.AttributeConfigurationSelector.selectConfigurationUsingAttributeMatching(AttributeConfigurationSelector.java:51)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.component.model.LocalComponentDependencyMetadata.selectConfigurations(LocalComponentDependencyMetadata.java:144)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.component.local.model.DslOriginDependencyMetadataWrapper.selectConfigurations(DslOriginDependencyMetadataWrapper.java:71)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.EdgeState.calculateTargetConfigurations(EdgeState.java:265)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.EdgeState.attachToTargetConfigurations(EdgeState.java:150)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.DependencyGraphBuilder.attachToTargetRevisionsSerially(DependencyGraphBuilder.java:380)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.DependencyGraphBuilder.resolveEdges(DependencyGraphBuilder.java:263)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.DependencyGraphBuilder.traverseGraph(DependencyGraphBuilder.java:200)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.DependencyGraphBuilder.resolve(DependencyGraphBuilder.java:151)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultArtifactDependencyResolver.resolve(DefaultArtifactDependencyResolver.java:141)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.DefaultConfigurationResolver.resolveBuildDependencies(DefaultConfigurationResolver.java:142)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.ShortCircuitEmptyConfigurationResolver.resolveBuildDependencies(ShortCircuitEmptyConfigurationResolver.java:76)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingConfigurationResolver.resolveBuildDependencies(ErrorHandlingConfigurationResolver.java:65)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.lambda$resolveGraphForBuildDependenciesIfRequired$6(DefaultConfiguration.java:871)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.project.DefaultProjectStateRegistry$CalculatedModelValueImpl.update(DefaultProjectStateRegistry.java:444)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveGraphForBuildDependenciesIfRequired(DefaultConfiguration.java:867)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.access$1800(DefaultConfiguration.java:159)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$SelectedArtifactsProvider.getTaskDependencyValue(DefaultConfiguration.java:1437)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$SelectedArtifactsProvider.getTaskDependencyValue(DefaultConfiguration.java:1433)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.visitDependencies(DefaultConfiguration.java:1478)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.tasks.CachingTaskDependencyResolveContext$TaskGraphImpl.getNodeValues(CachingTaskDependencyResolveContext.java:103)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.graph.CachingDirectedGraphWalker$GraphWithEmptyEdges.getNodeValues(CachingDirectedGraphWalker.java:213)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.graph.CachingDirectedGraphWalker.doSearch(CachingDirectedGraphWalker.java:121)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.graph.CachingDirectedGraphWalker.findValues(CachingDirectedGraphWalker.java:73)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.tasks.CachingTaskDependencyResolveContext.getDependencies(CachingTaskDependencyResolveContext.java:66)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.TaskDependencyResolver.resolveDependenciesFor(TaskDependencyResolver.java:49)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.LocalTaskNode.getDependencies(LocalTaskNode.java:147)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.LocalTaskNode.resolveDependencies(LocalTaskNode.java:121)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.DefaultExecutionPlan.doAddNodes(DefaultExecutionPlan.java:209)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.DefaultExecutionPlan.addEntryTasks(DefaultExecutionPlan.java:174)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.plan.DefaultExecutionPlan.addEntryTasks(DefaultExecutionPlan.java:158)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.TaskNameResolvingBuildConfigurationAction.configure(TaskNameResolvingBuildConfigurationAction.java:47)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.configure(DefaultBuildConfigurationActionExecuter.java:49)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.access$000(DefaultBuildConfigurationActionExecuter.java:25)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter$1.proceed(DefaultBuildConfigurationActionExecuter.java:62)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultTasksBuildExecutionAction.configure(DefaultTasksBuildExecutionAction.java:48)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.configure(DefaultBuildConfigurationActionExecuter.java:49)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.lambda$select$0(DefaultBuildConfigurationActionExecuter.java:36)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.Factories$1.create(Factories.java:31)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerLeaseService.java:345)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.project.DefaultProjectStateRegistry$DefaultBuildProjectRegistry.withMutableStateOfAllProjects(DefaultProjectStateRegistry.java:197)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.api.internal.project.DefaultProjectStateRegistry$DefaultBuildProjectRegistry.withMutableStateOfAllProjects(DefaultProjectStateRegistry.java:190)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.execution.DefaultBuildConfigurationActionExecuter.select(DefaultBuildConfigurationActionExecuter.java:35)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.initialization.DefaultTaskExecutionPreparer.prepareForTaskExecution(DefaultTaskExecutionPreparer.java:42)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.initialization.VintageBuildModelController.lambda$scheduleRequestedTasks$1(VintageBuildModelController.java:81)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.lambda$inState$1(StateTransitionController.java:110)
+[2023-06-13 15:17:51] [build-stdout] [2023-06-13 15:17:51] [autobuild] 	at org.gradle.internal.model.StateTransitionController.lambda$inState$2(StateTransitionController.java:125)
+[2023-06-13 15:17:52] [build-stdout] [2023-06-13 15:17:52] [ERROR] Spawned process exited abnormally (code 1; tried to run: [D:\codeql\tools\win64\runner.exe, cmd.exe, /C, type, NUL, &&, gradlew.bat, --no-daemon, -S, -Dorg.gradle.dependency.verification=off, --init-script, C:\Users\yashs\AppData\Local\Temp\semmleTempDir\init.gradle, testClasses])
+[2023-06-13 15:17:52] [ERROR] Spawned process exited abnormally (code 1; tried to run: [D:\codeql\tools\win64\tracer.exe, D:\codeql\tools\win64\runner.exe, cmd.exe, /C, type, NUL, &&, D:\codeql\java\tools\autobuild.cmd])
+[2023-06-13 15:17:52] Exception caught at top level: Exit status 1 from command: [D:\codeql\tools\win64\runner.exe, cmd.exe, /C, type, NUL, &&, D:\codeql\java\tools\autobuild.cmd]
+                      com.semmle.cli2.database.DatabaseProcessCommandCommon.executeSubcommand(DatabaseProcessCommandCommon.java:265)
+                      com.semmle.cli2.database.TraceCommandCommand.executeSubcommand(TraceCommandCommand.java:109)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$2(SubcommandCommon.java:645)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:412)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:643)
+                      com.semmle.cli2.picocli.PlumbingRunner.run(PlumbingRunner.java:111)
+                      com.semmle.cli2.picocli.SubcommandCommon.runPlumbingInProcess(SubcommandCommon.java:191)
+                      com.semmle.cli2.database.CreateCommand.executeSubcommand(CreateCommand.java:176)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$2(SubcommandCommon.java:645)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:412)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:643)
+                      com.semmle.cli2.picocli.SubcommandCommon.call(SubcommandCommon.java:562)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:223)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:233)
+                      com.semmle.cli2.CodeQL.main(CodeQL.java:113)

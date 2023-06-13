@@ -1,0 +1,172 @@
+[2023-06-13 15:35:42] This is codeql database create fineract_db --language=java --command=gradle build --source-root=. --overwrite
+[2023-06-13 15:35:42] Log file was started late.
+[2023-06-13 15:35:42] [PROGRESS] database create> Initializing database at D:\fineract-develop\fineract_db.
+[2023-06-13 15:35:42] Running plumbing command: codeql database init --overwrite --language=java --qlconfig-file=D:\fineract-develop\qlconfig.yml --source-root=D:\fineract-develop --allow-missing-source-root=false --allow-already-existing -- D:\fineract-develop\fineract_db
+[2023-06-13 15:35:42] Calling plumbing command: codeql resolve languages --format=json
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from D:\codeql\.codeqlmanifest.json
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\cpp\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\csharp\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\csv\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\go\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\html\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\java\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\javascript\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\properties\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\python\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\ruby\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\swift\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\xml\codeql-extractor.yml.
+[2023-06-13 15:35:43] [DETAILS] resolve languages> Parsing D:\codeql\yaml\codeql-extractor.yml.
+[2023-06-13 15:35:43] Plumbing command codeql resolve languages completed:
+                      {
+                        "extractors" : {
+                          "cpp" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\cpp"
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "cil" : {
+                                  "title" : "Whether to enable CIL extraction.",
+                                  "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\csv"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\go"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\html"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\javascript",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\properties"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\python"
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\swift"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\xml"
+                            }
+                          ],
+                          "yaml" : [
+                            {
+                              "extractor_root" : "D:\\codeql\\yaml"
+                            }
+                          ]
+                        }
+                      }
+[2023-06-13 15:35:43] [PROGRESS] database init> Calculating baseline information in D:\fineract-develop
+[2023-06-13 15:35:43] [SPAMMY] database init> Ignoring the following directories when processing baseline information: .git, .hg, .svn.
+[2023-06-13 15:35:43] [DETAILS] database init> Running command in D:\fineract-develop: D:\codeql\tools\win64\scc.exe --by-file --exclude-dir .git,.hg,.svn --format json --no-large --no-min .
+[2023-06-13 15:35:53] [SPAMMY] database init> Found 4274 baseline files for java.
+[2023-06-13 15:35:53] [SPAMMY] database init> Found 18 baseline files for yaml.
+[2023-06-13 15:35:53] [PROGRESS] database init> Calculated baseline information for languages: java, yaml (10s).
+[2023-06-13 15:35:53] [PROGRESS] database init> Resolving extractor java.
+[2023-06-13 15:35:53] [DETAILS] database init> Found candidate extractor root for java: D:\codeql\java.
+[2023-06-13 15:35:53] [PROGRESS] database init> Successfully loaded extractor Java (java) from D:\codeql\java.
+[2023-06-13 15:35:54] [PROGRESS] database init> Created skeleton CodeQL database at D:\fineract-develop\fineract_db. This in-progress database is ready to be populated by an extractor.
+[2023-06-13 15:35:54] Plumbing command codeql database init completed.
+[2023-06-13 15:35:54] [PROGRESS] database create> Running build command: [gradle, build]
+[2023-06-13 15:35:54] Running plumbing command: codeql database trace-command --working-dir=D:\fineract-develop --index-traceless-dbs --no-db-cluster -- D:\fineract-develop\fineract_db gradle build
+[2023-06-13 15:35:54] [PROGRESS] database trace-command> Running command in D:\fineract-develop: [gradle, build]
+[2023-06-13 15:35:54] [build-stderr] 'gradle' is not recognized as an internal or external command,
+[2023-06-13 15:35:54] [build-stderr] operable program or batch file.
+[2023-06-13 15:35:54] [ERROR] Spawned process exited abnormally (code 1; tried to run: [D:\codeql\tools\win64\tracer.exe, D:\codeql\tools\win64\runner.exe, cmd.exe, /C, type, NUL, &&, gradle, build])
+[2023-06-13 15:35:54] Exception caught at top level: Exit status 1 from command: [D:\codeql\tools\win64\runner.exe, cmd.exe, /C, type, NUL, &&, gradle, build]
+                      com.semmle.cli2.database.DatabaseProcessCommandCommon.executeSubcommand(DatabaseProcessCommandCommon.java:265)
+                      com.semmle.cli2.database.TraceCommandCommand.executeSubcommand(TraceCommandCommand.java:109)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$2(SubcommandCommon.java:645)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:412)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:643)
+                      com.semmle.cli2.picocli.PlumbingRunner.run(PlumbingRunner.java:111)
+                      com.semmle.cli2.picocli.SubcommandCommon.runPlumbingInProcess(SubcommandCommon.java:191)
+                      com.semmle.cli2.database.CreateCommand.executeSubcommand(CreateCommand.java:176)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$2(SubcommandCommon.java:645)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:412)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:643)
+                      com.semmle.cli2.picocli.SubcommandCommon.call(SubcommandCommon.java:562)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:223)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:233)
+                      com.semmle.cli2.CodeQL.main(CodeQL.java:113)
