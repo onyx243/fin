@@ -2,7 +2,7 @@ name: Fineract Sonarqube
 on:
   push:
     branches:
-      - develop
+      - develop //ds
 
 permissions:
   contents: read
